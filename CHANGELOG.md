@@ -1,6 +1,6 @@
 <div align="center">
 
-🇩🇪 <b>Deutsch</b> &nbsp;·&nbsp; 🇬🇧 <a href="CHANGELOG.en.md">English</a>
+<img src="docs/flags/de.svg" height="14" alt="DE"> <b>Deutsch</b> &nbsp;·&nbsp; <img src="docs/flags/gb.svg" height="14" alt="GB"> <a href="CHANGELOG.en.md">English</a>
 
 # Änderungen
 
