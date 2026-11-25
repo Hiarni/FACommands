@@ -82,8 +82,10 @@ public class Config
             throw new JsonSerializationException("Rank List must be an array of non-empty strings.");
         if (NpcList == null || NpcList.Any(id => id <= 0 || id >= NPCID.Count))
             throw new JsonSerializationException($"NPC Spawn List must contain IDs from 1 to {NPCID.Count - 1}.");
-        if (OwnerBroadcastPrefix == null || OwnerBroadcastColor == null)
-            throw new JsonSerializationException("Owner broadcast prefix and color must not be null.");
+        if (OwnerBroadcastPrefix == null)
+            throw new JsonSerializationException("Owner broadcast prefix must not be null.");
+        if (string.IsNullOrEmpty(OwnerBroadcastColor))
+            throw new JsonSerializationException("Owner broadcast color must be a non-empty string.");
         if (MinRollDice > MaxRollDice)
             throw new JsonSerializationException("Min Roll Dice must not exceed Max Roll Dice.");
         foreach (var property in typeof(Config).GetProperties().Where(p => p.Name.EndsWith("Cooldown", StringComparison.Ordinal)))
