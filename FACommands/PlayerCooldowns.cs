@@ -11,6 +11,7 @@ internal sealed class PlayerCooldowns
     public bool CheckCooldown(string command, int cooldown, out int left)
     {
         left = 0;
+        // Ignore the check if the cooldown is currently zero or less, or the cooldown has changed since
         if (cooldown <= 0 || !_cooldowns.TryGetValue(command, out var previous) || previous.Duration != cooldown)
             return true;
 
