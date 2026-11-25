@@ -5,7 +5,7 @@ internal sealed class PlayerCooldowns
     private readonly TimeProvider _time;
     private readonly Dictionary<string, (long Started, int Duration)> _cooldowns = new();
 
-    public PlayerCooldowns(TimeProvider? time = null) => _time = time ?? TimeProvider.System;
+    public PlayerCooldowns(TimeProvider time = TimeProvider.System) => _time = time;
 
     // True means the command may run. Use monotonic time so clock changes cannot extend cooldowns.
     public bool CheckCooldown(string command, int cooldown, out int left)
