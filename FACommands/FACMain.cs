@@ -73,8 +73,8 @@ public class FACommands : TerrariaPlugin
 
     private void RegisterCommand(Command command)
     {
-        _commands.Add(command);
         Commands.ChatCommands.Add(command);
+        _commands.Add(command);
     }
 
     private void OnReload(ReloadEventArgs args)
