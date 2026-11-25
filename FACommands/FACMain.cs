@@ -68,8 +68,10 @@ public class FACommands : TerrariaPlugin
             _playerList.Remove(player);
     }
 
-    private PlayerCooldowns GetPlayerState(TSPlayer player) =>
-        _playerList.GetValue(player, _ => new PlayerCooldowns());
+    private PlayerCooldowns GetPlayerState(TSPlayer player)
+    {
+        return _playerList.GetValue(player, _ => new PlayerCooldowns());
+    }
 
     private void RegisterCommand(Command command)
     {
