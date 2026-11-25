@@ -3,6 +3,8 @@ Fun and Admin commands
 
 Originally created by Hiarni & Zaicon
 
+[Download](../../releases/latest) · [Changelog](CHANGELOG.en.md)
+
 ## Commands & Permissions
 
 Most commands have cooldowns. You can give the `facommands.nocd` permission to disable cooldowns.
