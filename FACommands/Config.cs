@@ -78,8 +78,8 @@ public class Config
 
     internal void Validate()
     {
-        if (RankList == null || RankList.Any(rank => rank == null))
-            throw new JsonSerializationException("Rank List must be an array of strings.");
+        if (RankList == null || RankList.Any(rank => string.IsNullOrEmpty(rank))
+            throw new JsonSerializationException("Rank List must be an array of non-empty strings.");
         if (NpcList == null || NpcList.Any(id => id <= 0 || id >= NPCID.Count))
             throw new JsonSerializationException($"NPC Spawn List must contain IDs from 1 to {NPCID.Count - 1}.");
         if (OwnerBroadcastPrefix == null || OwnerBroadcastColor == null)
